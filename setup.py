@@ -162,65 +162,22 @@ class install_data_panda (install_data_org):
         install_data_org.run(self)
 
 
-def gen_data_files(*dirs):
-    """
-    gen_data_files: generate list of files in the list of directories "dirs" 
-    
-    """
-    results = []
-    for src_dir in dirs:
-        for root,dirs,files in os.walk(src_dir):
-            results.append((lib_prefix + root, map(lambda f:root + "/" + f, files)))
-    return results
-
-
 # setup for distutils
 setup(
     name=__provides__,
     version=__version__,
-    description='BigPanDA Monitoring Package - Core',
-    long_description='''This package contains BigPanDA Monitoring Components - Core''',
+    description='BigPanDA Monitoring Package - HTCondorjob',
+    long_description='''This package contains BigPanDA Monitoring Components - HTCondorjob''',
     license='GPL',
     author='Panda Team',
     author_email='hn-atlas-panda-pathena@cern.ch',
     url='https://twiki.cern.ch/twiki/bin/view/PanDA/BigPanDAmonitoring',
-    packages=[ #FIXME
-        'core',
-        'core.api',
-        'core.api.user',
-        'core.api.htcondorapi', 
-        'core.api.jedi', 
-        'core.api.jedi.jobsintask', 
-        'core.common',
-        'core.common.settings', 
-        'core.common.templatetags', 
-        'core.htcondor', 
-        'core.pandajob', 
-        'core.pandajob.templatetags', 
-        'core.resource', 
-        'core.table', 
-        'core.task',
-        'core.datatables',
-        'core.datatables.templatetags',
-        'core.gspread',
+    packages=[ 
+        'htcondor',
+        'htcondor.api',
     ],
-    data_files=[ #FIXME
-                # config files 
-                ('%score/common/settings' % (lib_prefix), [
-                            'core/common/settings/local.py-example-template', ]
-                 ),
-                # HTML templates and static files
+    data_files=[
                 ]
-                 + gen_data_files(
-                    "core/common/templates",
-                    "core/common/static",
-                    "core/common/media",
-                    "core/htcondor/templates",
-                    "core/pandajob/templates",
-                    "core/resource/templates",
-                    "core/datatables/templates",
-                    "core/datatables/static",
-                )
     ,         
     cmdclass={'install': install_panda,
               'install_data': install_data_panda}

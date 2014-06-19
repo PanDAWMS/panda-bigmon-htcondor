@@ -1,4 +1,2 @@
 include *.txt *.py *.cfg 
-recursive-include core *-template
 global-include *.html *.js *.css *.png *.gif *.ico *-example*
-prune core/doc 

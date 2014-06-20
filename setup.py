@@ -3,7 +3,7 @@
 # Setup prog for bigpandamon-htcondor
 #
 #
-from version import __version__, __provides__
+from htcondor import __version__
 
 import os
 import re
@@ -11,7 +11,7 @@ import sys
 from distutils.core import setup
 
 setup(
-    name = __provides__,
+    name = 'bigpandamon-htcondor',
     version = __version__,
     description = 'BigPanDA Monitoring Package - HTCondorjob',
     long_description = '''This package contains BigPanDA Monitoring Components - HTCondorjob''',

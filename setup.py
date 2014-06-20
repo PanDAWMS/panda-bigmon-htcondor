@@ -28,7 +28,7 @@ setup(
         ('etc/', ['requirements.txt',
             ]
     ),
-        ('doc/', ['README.txt',
+        ('doc/', ['README.md',
             ]
     ),
     ],

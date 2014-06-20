@@ -1,2 +1,2 @@
-include *.txt *.py *.cfg 
+include *.md *.txt *.py *.cfg 
 global-include *.html *.js *.css *.png *.gif *.ico *-example*

@@ -1,4 +1,4 @@
 panda-bigmon-htcondor
 =====================
 
-BigPanDA monitoring - HTCondor
+BigPanDA monitoring - HTCondor.
